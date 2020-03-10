@@ -52,10 +52,16 @@ There are a two key things to note about the behaviour of passenger numbers disp
  
  Perhaps we could say that the benefits of such a backtesting are only apparent when we have a model with a high bias. That is, when we have made quite a few assumptions as to how our timeseries should be behaving, our backtest will confirm our initial beliefs and tell us in detail the resulting values of (well understood) parameters on our data. Whereas conversely, fitting a high variance model on the training set probably won't tell us too much; it will likely perfectly (over)fit the training data, and we'll have little idea how to interpret the parameters (think of fitting a lasso regression vs a huge random forest on a dataset).
  
- Anyway, we're getting off-topic somewhat. The prophet model has a lot of assumptions built in; namely seasonality and trend, so we can convince ourselves that fitting it on our training data will gives us a good idea of how season and trend are effecting passenger numbers in our data.
+ Anyway, we're getting off-topic somewhat. The prophet model has a lot of assumptions built in; namely seasonality and trend, so we can convince ourselves that fitting it on our training data will gives us a good idea of how season and trend are affecting passenger numbers in our data.
  
  Let's have a look at the training data (i.e. all data bar the last 6 months) fit with prophet:
  
  <p align="center">
   <img width="600" src="images/schiphol_data_fit.png">
+</p>
+
+Prophet has fit the data (black points) with the solid blue line, and also provided us a confidence interval (by default this is 80%). By eye, we can see that the fit to the data is pretty good, but the real power of prophet is its ability to decompose seasonality and trend. Let's plot, for example the stationary component of the above fit (i.e. *s(t)* from the equation above):
+
+<p align="center">
+  <img width="600" src="images/schiphol_data_stationary.png">
 </p>
