@@ -66,10 +66,18 @@ Prophet has fit the data (black points) with the solid blue line, and also provi
   <img width="600" src="images/schiphol_data_stationary.png">
 </p>
 
-Now we can clearly see the passenger behaviour we ascertained before; passenegers tend to travel during the summer months (presumably for their summer holidays) while very few people take flights late or early in the year.
+Now we can clearly see the passenger behaviour we ascertained before; passengers tend to travel during the summer months (presumably for their summer holidays) while very few people take flights late or early in the year.
 
 We can make this seasonality even clearer by averaging this staionary component over all years in the data set, the resulting pattern is shown below:
 
 <p align="center">
   <img width="600" src="images/schiphol_data_monthly_variation.png">
+</p>
+
+With this "zoomed-in" view, we can clearly see the peak months for flying are July and August, with almost symmetrical reduction in the neighbouring months of May-June and September-October. Indeed, perhaps the curve would be nearly entirely symmetric around July-August were it not for an uptick in flights at December and January time (likely due to festive flights).
+
+Having confirmed our suspicion of the seasonality, let's now inspect the trend, i.e. how are passenger numbers changing year-on-year? Let's go ahead and plot the trend component (*g(t)*) of the prophet fit:
+
+<p align="center">
+  <img width="600" src="images/schiphol_data_trend.png">
 </p>
