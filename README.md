@@ -1,4 +1,4 @@
-![alt text](yoydyne_data_science_logo.png "Yoydyne Data Science")
+![alt text](/images/yoydyne_data_science_logo.png "Yoydyne Data Science")
 
 # Using Facebook's prophet to predict Schiphol passenger numbers
 
@@ -41,3 +41,11 @@ There are a two key things to note about the behaviour of passenger numbers disp
  ## Modelling Passenger numbers with Prophet
  
  Let's get started with prophet, note all the code to generate the following figures is included in the [notebook](https://github.com/Yoyodyne-Data-Science/schiphol-passengers/blob/master/Schiphol_Passengers.ipynb), and I've provided the monthly data in a clean csv [schiphol_millions_pax_monthly.csv](https://github.com/Yoyodyne-Data-Science/schiphol-passengers/blob/master/data/schiphol_millions_pax_monthly.csv).
+ 
+ ### Installing prophet
+ 
+ Sometimes the installation of prophet isn't so straightforward, I've put some helpful tips and links in the markdown [notes_on_prophet_installation.md](https://github.com/Yoyodyne-Data-Science/schiphol-passengers/blob/master/notes_on_prophet_installation.md)
+ 
+ ### Understanding patterns in the data
+ 
+ 
