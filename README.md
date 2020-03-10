@@ -15,3 +15,10 @@ Realizing the importance of such features, the prophet model has seasonality bui
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?y(t)&space;=&space;g(t)&space;&plus;s(t)&plus;h(t)&plus;\epsilon_t" title="y(t) = g(t) +s(t)+h(t)+\epsilon_t" />
 </p>
+
+Here, *g(t)* is the trend function capturing non-periodic changes, *s(t)* represents periodic changes (e.g. daily/weekly/yearly seasonality), *h(t)* represents the effects of holidays, and &#949;<sub>*t*</sub> is a normally distributed error term.
+
+Ok, enough of the introduction to prophet, please read [the paper itself](https://peerj.com/preprints/3190/#) for further details. Let's crack on with our example.
+
+## Schiphol passenger data
+
