@@ -100,3 +100,12 @@ Let's zoom-in and take a closer look at the last six months:
   <img width="600" src="images/schiphol_data_fit_held_back.png">
 </p>
 
+We can see that prophet performs pretty well on the unseen data, yielding a root mean square error (RMSE) of around 0.17 million passengers. N.B. I chose [RMSE](https://en.wikipedia.org/wiki/Root-mean-square_deviation) to have the error be in units of passenger numbers, but obviously there are lots of other metrics one can use to measure the goodness-of-fit of a model's predictions versus actual values. Please feel free to increase the number of held out months and see how prophet copes with having to predict further into the future.
+
+One thing I've found from playing around with prophet and this data is that it is far better capturing the seasonality of unseen data than it is at capturing its trend. This is perhaps, unsurprising. By definition, we expect seasonal effects to vary very little year on year. Prophet has 10 years to fit this seasonality to, and happily projects it forward onto unseen data. The trend is altogether harder to predict, there are clearly many environmental, economic and social factors at play which simply aren't captured by only considering previous values of passenger numbers. We can actually see this in the example here, though prophet nicely follows the trend of passenger number seasonality, it seems to overshoot each data point; a symptom of over estimating the trend in passenger number increase.
+
+## Conclusions
+
+In this example we've seen that prophet is a powerful tool for modelling timeseries data, especially data which shows strong seasonality, as is the case with passenger numbers through Schiphol airport. We touched briefly on the limitations of prophet, and perhaps for the problem considered here a blended approach would have been good, where prophet is used to decompose the timeseries into seasonality and trend and alternative data is sourced to train a machine learning model on the trend component.
+
+For those curious as to why passenger numbers through Schiphol don't keep growing at a constant rate, [this page](http://trafficreview2018.schiphol.tangelo.nl/movements) explains some of the environmental regulations Schiphol airport must adhere to. Specifically, being limited to 500,000 movements per operational year leaves little room for passenger growth without a commensurate reduction in freight flights.
