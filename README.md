@@ -48,4 +48,14 @@ There are a two key things to note about the behaviour of passenger numbers disp
  
  ### Understanding patterns in the data
  
+ Remember that we held out the final 6 months of data so that we can see how good prophet is at predicting unseen data. This is the equivalent of a test dataset in the usual parlance of data science train-test splits. Before trying to predict those data points and evaluating the correctness of such a prediction, let's first fit prophet on the training data itself. Though this might feel like quite a strange thing to do, as typically we are interested in how a model performs on unseen data (knowing from experience that models can perform arbitrarily well on training data, e.g. see ["overfitting"](https://en.wikipedia.org/wiki/Overfitting)), it is quite common in time series analysis, e.g. see ["backtesting"](https://en.wikipedia.org/wiki/Backtesting). Such a fit typically allows us to isolate -- and hopefully, understand -- patterns in historic data.
  
+ Perhaps we could say that the benefits of such a backtesting are only apparent when we have a model with a high bias. That is, when we have made quite a few assumptions as to how our timeseries should be behaving, our backtest will confirm our initial beliefs and tell us in detail the resulting values of (well understood) parameters on our data. Whereas conversely, fitting a high variance model on the training set probably won't tell us too much; it will likely perfectly (over)fit the training data, and we'll have little idea how to interpret the parameters (think of fitting a lasso regression vs a huge random forest on a dataset).
+ 
+ Anyway, we're getting off-topic somewhat. The prophet model has a lot of assumptions built in; namely seasonality and trend, so we can convince ourselves that fitting it on our training data will gives us a good idea of how season and trend are effecting passenger numbers in our data.
+ 
+ Let's have a look at the training data (i.e. all data bar the last 6 months) fit with prophet:
+ 
+ <p align="center">
+  <img width="600" src="images/schiphol_data_fit.png">
+</p>
