@@ -22,3 +22,8 @@ Ok, enough of the introduction to prophet, please read [the paper itself](https:
 
 ## Schiphol passenger data
 
+Schiphol monthly passenger data is freely available from the [Schiphol website](https://www.schiphol.nl/en/schiphol-group/page/transport-and-traffic-statistics/), and though there are several interesting figures published, we'll be inerested in the value labelled *Passengers (incl transit-direct)*. Let's take a quick look at the data:
+
+<p align="center">
+  <img width="600" src="images/schiphol_data.png">
+</p>
