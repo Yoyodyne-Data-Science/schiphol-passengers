@@ -95,7 +95,3 @@ Below, we can see the fit to unseen data in grey:
 </p>
 
 Let's zoom-in and take a closer look at the last six months:
-
-<p align="center">
-  <img width="600" src="images/schiphol_data_fit_held_back.png">
-</p>
