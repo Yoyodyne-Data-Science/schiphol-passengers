@@ -22,8 +22,22 @@ Ok, enough of the introduction to prophet, please read [the paper itself](https:
 
 ## Schiphol passenger data
 
-Schiphol monthly passenger data is freely available from the [Schiphol website](https://www.schiphol.nl/en/schiphol-group/page/transport-and-traffic-statistics/), and though there are several interesting figures published, we'll be inerested in the value labelled *Passengers (incl transit-direct)*. Let's take a quick look at the data:
+Schiphol monthly passenger data is freely available from the [Schiphol website](https://www.schiphol.nl/en/schiphol-group/page/transport-and-traffic-statistics/), and though there are several interesting figures published, we'll be inerested in the value labelled *Passengers (incl transit-direct)*, for which data is available from January 2010 until January 2020. Let's take a quick look at the data:
 
 <p align="center">
   <img width="600" src="images/schiphol_data.png">
 </p>
+
+There are a two key things to note about the behaviour of passenger numbers displayed here:
+
+ - Seasonality. We see clear seasonality in the behaviour of passenger numbers, for example passengers seem to travel more frequently in summer months. You might also be able to convince yourself of an uptick in December and January related to Christmas travel.
+ 
+ - Trend. Passenger numbers can be seen to be steadily increasing, with this increase possibly flattening-out over recent years. 
+ 
+ These two behaviours are, as we explained, already built into prophet, so this should be a great example problem for it to solve. 
+ 
+ Note finally the colour difference of the last 6 data points, we've plotted them in grey to denote the fact that these are the points we're going to ask prophet to predict later on. In the notebook you'll see that the number of held back months can easily be varied, and you might want to play around with it to see how prophet fares when predicting further or nearer into the future.
+ 
+ ## Modelling Passenger numbers with Prophet
+ 
+ Let's get started with prophet, note all the code to generate the following figures is included in the [notebook](https://github.com/Yoyodyne-Data-Science/schiphol-passengers/blob/master/Schiphol_Passengers.ipynb), and I've provided the monthly data in a clean csv [schiphol_millions_pax_monthly.csv](https://github.com/Yoyodyne-Data-Science/schiphol-passengers/blob/master/data/schiphol_millions_pax_monthly.csv).
