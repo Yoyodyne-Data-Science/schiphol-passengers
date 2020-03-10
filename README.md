@@ -76,8 +76,26 @@ We can make this seasonality even clearer by averaging this staionary component 
 
 With this "zoomed-in" view, we can clearly see the peak months for flying are July and August, with almost symmetrical reduction in the neighbouring months of May-June and September-October. Indeed, perhaps the curve would be nearly entirely symmetric around July-August were it not for an uptick in flights at December and January time (likely due to festive flights).
 
-Having confirmed our suspicion of the seasonality, let's now inspect the trend, i.e. how are passenger numbers changing year-on-year? Let's go ahead and plot the trend component (*g(t)*) of the prophet fit:
+Having confirmed our suspicion of the seasonality, let's now inspect the trend, i.e. how are passenger numbers changing year-on-year? Let's go ahead and plot the trend component, *g(t)*, of the prophet fit:
 
 <p align="center">
   <img width="600" src="images/schiphol_data_trend.png">
+</p>
+
+We can see the overall trend is that more and more people are flying as time goes on. Further inspection reveals subtler effects, e.g. at somepoint in 2017 the rate of passenger number increase seems to have rather abruptly decreased.
+
+### Predicting the next 6 months
+ 
+Now we move on to the task of predicting unseen data. As mentioned previously, we'll try to predict the last six months of data, having trained on all previous data points. Again, the details of running this fit are contained in the [notebook](https://github.com/Yoyodyne-Data-Science/schiphol-passengers/blob/master/Schiphol_Passengers.ipynb), here I'll just focus on the results.
+
+Below, we can see the fit to unseen data in grey:
+
+<p align="center">
+  <img width="600" src="images/schiphol_data_fit_held_back_plus_orig.png">
+</p>
+
+Let's zoom-in and take a closer look at the last six months:
+
+<p align="center">
+  <img width="600" src="images/schiphol_data_fit_held_back.png">
 </p>
