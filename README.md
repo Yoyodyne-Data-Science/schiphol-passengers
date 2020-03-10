@@ -60,8 +60,16 @@ There are a two key things to note about the behaviour of passenger numbers disp
   <img width="600" src="images/schiphol_data_fit.png">
 </p>
 
-Prophet has fit the data (black points) with the solid blue line, and also provided us a confidence interval (by default this is 80%). By eye, we can see that the fit to the data is pretty good, but the real power of prophet is its ability to decompose seasonality and trend. Let's plot, for example the stationary component of the above fit (i.e. *s(t)* from the equation above):
+Prophet has fit the data (black points) with the solid blue line, and also provided us a confidence interval (by default this is 80%). By eye, we can see that the fit to the data is pretty good, but the real power of prophet is its ability to decompose seasonality and trend. Let's plot, for example the stationary component of the above fit (i.e. seasonality *s(t)* from the equation above):
 
 <p align="center">
   <img width="600" src="images/schiphol_data_stationary.png">
+</p>
+
+Now we can clearly see the passenger behaviour we ascertained before; passenegers tend to travel during the summer months (presumably for their summer holidays) while very few people take flights late or early in the year.
+
+We can make this seasonality even clearer by averaging this staionary component over all years in the data set, the resulting pattern is shown below:
+
+<p align="center">
+  <img width="600" src="images/schiphol_data_monthly_variation.png">
 </p>
