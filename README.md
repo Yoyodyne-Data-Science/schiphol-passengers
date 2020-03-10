@@ -1,4 +1,4 @@
-![alt text](/images/yoydyne_data_science_logo.png "Yoydyne Data Science")
+![alt text](images/yoydyne_data_science_logo.png "Yoydyne Data Science")
 
 # Using Facebook's prophet to predict Schiphol passenger numbers
 
