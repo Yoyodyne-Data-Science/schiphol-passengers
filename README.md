@@ -13,7 +13,7 @@ Perhaps the most well known time series model is the *Autoregressive integrated 
 Realizing the importance of such features, the prophet model has seasonality built-in *a priori*. It takes a completely different tack from ARIMA and related models and more closely resembles a curve fitting exercise. Concretely, prophet decomposes a time series *y(t)* as follows:
 
 <p align="center">
-<img src="https://latex.codecogs.com/gif.latex?y(t)&space;=&space;g(t)&space;&plus;s(t)&plus;h(t)&plus;\epsilon_t" title="y(t) = g(t) +s(t)+h(t)+\epsilon_t" />
+<img src="images/prophet_eq.gif" title="y(t) = g(t) +s(t)+h(t)+\epsilon_t" />
 </p>
 
 Here, *g(t)* is the trend function capturing non-periodic changes, *s(t)* represents periodic changes (e.g. daily/weekly/yearly seasonality), *h(t)* represents the effects of holidays, and &#1013;<sub>*t*</sub> is a normally distributed error term.
